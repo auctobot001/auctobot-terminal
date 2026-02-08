@@ -2,38 +2,50 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer base {
-  * {
-    border-color: rgba(20, 83, 45, 0.3);
-  }
-  body {
-    background-color: #000;
-    color: #4ade80;
-  }
-}
-
 /* Terminal styling */
 .terminal-line {
-  @apply font-mono text-sm leading-relaxed;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+  line-height: 1.625;
 }
 
 .terminal-prompt {
-  @apply text-green-500 font-bold;
+  color: #22c55e;
+  font-weight: 700;
 }
 
 .terminal-input {
-  @apply bg-transparent border-none outline-none text-green-400 font-mono;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #4ade80;
+  font-family: 'JetBrains Mono', monospace;
 }
 
 .terminal-button {
-  @apply px-4 py-2 bg-green-900/20 border border-green-500/50 
-         hover:bg-green-500/20 hover:border-green-400 
-         transition-all duration-200 font-mono text-sm
-         active:scale-95;
+  padding: 0.5rem 1rem;
+  background: rgba(20, 83, 45, 0.2);
+  border: 1px solid rgba(34, 197, 94, 0.5);
+  transition: all 0.2s;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.875rem;
+}
+
+.terminal-button:hover {
+  background: rgba(34, 197, 94, 0.2);
+  border-color: #4ade80;
+}
+
+.terminal-button:active {
+  transform: scale(0.95);
 }
 
 .terminal-panel {
-  @apply border border-green-500/30 bg-black/40 backdrop-blur-sm p-4 rounded;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  padding: 1rem;
+  border-radius: 0.25rem;
 }
 
 /* Glitch effect */

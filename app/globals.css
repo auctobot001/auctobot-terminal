@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 120 100% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-green-900/30;
+  }
+  body {
+    @apply bg-black text-green-400;
+  }
+}
+
+/* Terminal styling */
+.terminal-line {
+  @apply font-mono text-sm leading-relaxed;
+}
+
+.terminal-prompt {
+  @apply text-green-500 font-bold;
+}
+
+.terminal-input {
+  @apply bg-transparent border-none outline-none text-green-400 font-mono;
+}
+
+.terminal-button {
+  @apply px-4 py-2 bg-green-900/20 border border-green-500/50 
+         hover:bg-green-500/20 hover:border-green-400 
+         transition-all duration-200 font-mono text-sm
+         active:scale-95;
+}
+
+.terminal-panel {
+  @apply border border-green-500/30 bg-black/40 backdrop-blur-sm p-4 rounded;
+}
+
+/* Glitch effect */
+.glitch {
+  animation: glitch 1s infinite;
+}
+
+@keyframes glitch {
+  0% { transform: translate(0); }
+  20% { transform: translate(-2px, 2px); }
+  40% { transform: translate(-2px, -2px); }
+  60% { transform: translate(2px, 2px); }
+  80% { transform: translate(2px, -2px); }
+  100% { transform: translate(0); }
+}
+
+/* Scan line effect */
+.scanline {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanline::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 255, 0, 0.03) 50%,
+    transparent 100%
+  );
+  animation: scan 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes scan {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}

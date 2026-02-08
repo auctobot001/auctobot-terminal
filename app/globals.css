@@ -3,18 +3,12 @@
 @tailwind utilities;
 
 @layer base {
-  :root {
-    --background: 0 0% 0%;
-    --foreground: 120 100% 50%;
-  }
-}
-
-@layer base {
   * {
-    @apply border-green-900/30;
+    border-color: rgba(20, 83, 45, 0.3);
   }
   body {
-    @apply bg-black text-green-400;
+    background-color: #000;
+    color: #4ade80;
   }
 }
 
